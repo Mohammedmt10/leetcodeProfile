@@ -54,28 +54,33 @@ Chart.register({
   });
 export function Favorite() {
     return (
-        <div className="bg-gray-700 h-fit px-8 w-fit pt-8 pb-3 text-white m-10 ml-20">
-            <StarIcon />
-            <div className="text-5xl font-bold">Favorite</div>
-            <div className="flex items-center">
-                Username &middot; questonslength &middot; <LockIcon /> Private <DownArrow />
+        <div className="bg-gray-700 h-fit px-8 w-full lg:w-fit pt-16 lg:pt-8 pb-3 text-white m-10 ml-0 lg:ml-20">
+            <div className="table lg:flex mx-auto">
+                <StarIcon />
             </div>
-            <div className="flex gap-3 mt-3 border-b-2 pb-6 mb-3">
-                <button className="flex items-center gap-2 bg-amber-50 text-black px-3 rounded-full">
-                    <PlayIcon /> Practice
-                </button>
-                <button className="bg-gray-800 p-2 rounded-full">
-                    <ForkIcon />
-                </button>
-            </div>
-            <div className="justify-between flex items-center">
-                <div>Progress</div>
-                <div>
-                    <RefreshIcon />
+            <div className="text-center lg:text-justify">
+                <div className="text-5xl font-bold">Favorite</div>
+                <div className="hidden lg:flex">
+                    Username &middot; 19 Questions &middot; <LockIcon /> Private <DownArrow />
+                </div>
+                <div className="flex mx-auto gap-3 mt-3 lg:border-b-2 pb-6 mb-3 w-fit lg:w-full">
+                    <button className="flex items-center gap-2 bg-amber-50 text-black px-3 rounded-full">
+                        <PlayIcon /> Practice
+                    </button>
+                    <button className="bg-gray-800 p-2 rounded-full">
+                        <ForkIcon />
+                    </button>
                 </div>
             </div>
-            <div className="w-full">
-                <div className="flex items-center h-fit m-2 w-full ">
+            <div className="lg:block hidden">
+                <div className="justify-between flex items-center">
+                    <div>Progress</div>
+                    <div>
+                        <RefreshIcon />
+                    </div>
+                </div>
+                <div className="w-full ">
+                <div className="flex items-center h-fit m-2 w-full">
                     <div className="bg-[#333333] h-52 w-full">
                     <Doughnut
                         data={{
@@ -109,6 +114,8 @@ export function Favorite() {
                     </div>
             </div>
                 </div>
+            </div>
+            
         </div>
     );
 }

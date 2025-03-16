@@ -25,9 +25,7 @@ export function ProblemsList() {
         }
     }
 
-    {console.log(filters.length > 0)}
-
-    return <div className="h-full w-fit">
+    return <div className="h-full max-w-full w-full lg:w-full ">
         <button className="bg-amber-50 text-black items-center flex px-4 gap-2 py-1 rounded-full mt-8" onClick={() => {
             FilterSet(c => !c);
         }}><FilterIcon />Filter</button>
@@ -76,7 +74,7 @@ export function ProblemsList() {
                 //@ts-ignore
                 (filters.length > 0) && filters.find((filter) => {
                     return filter == 'hard' && problem.type == "hard"
-                 }) && <div className={`text-white p-2 w-full rounded px-7`}>
+                 }) && <div className={`text-white p-2 w-full rounded lg:px-7`}>
                     <div className="grid-cols-1 py-1  w-full flex justify-between">
                         <div>
                         {problem.title} 
@@ -95,7 +93,7 @@ export function ProblemsList() {
                 <button className="bg-gray-800 w-full py-1 rounded font-medium flex items-center gap-3 place-content-center" onClick={resetHandler}><RefreshIcon />
                 Reset</button>
             </div>}
-        <div className="grid [&>:nth-child(odd)]:bg-[#333333] [&>:nth-child(even)]:bg-none w-[44vw] mt-3">
+        <div className="grid [&>:nth-child(odd)]:bg-[#333333] [&>:nth-child(even)]:bg-none mt-3 w-full">
             {Probem.map((problem) => (
                 //@ts-ignore
                 (filters.length <= 0) && <div className={`text-white p-2 w-full rounded px-7`}>
